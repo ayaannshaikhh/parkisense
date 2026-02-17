@@ -1,2 +1,9 @@
-# parkisense
-A computer vision–based machine learning system that analyzes hand movement videos to detect Parkinsonian tremors.
+# Creating a Virtual Environment
+```bash
+python -m venv .venv
+```
+
+```bash
+source .venv/bin/activate
+```
+---
