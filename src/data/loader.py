@@ -1,20 +1,16 @@
-# Install dependencies as needed:
-# pip install kagglehub[pandas-datasets]
 import kagglehub
 from kagglehub import KaggleDatasetAdapter
 
-# Set the path to the file you'd like to load
-file_path = ""
 
-# Load the latest version
-df = kagglehub.load_dataset(
-    KaggleDatasetAdapter.PANDAS,
-    "nikee7/parkinsons-tremor-classification-dataset",
-    file_path,
-    # Provide any additional arguments like
-    # sql_query or pandas_kwargs. See the
-    # documenation for more information:
-    # https://github.com/Kaggle/kagglehub/blob/main/README.md#kaggledatasetadapterpandas
-)
+def load_tremor_dataset(file_path="train.csv"):
+    df = kagglehub.load_dataset(
+        KaggleDatasetAdapter.PANDAS,
+        "nikee7/parkinsons-tremor-classification-dataset",
+        file_path,
+    )
+    return df
 
-print("First 5 records:", df.head())
+
+if __name__ == "__main__":
+    df = load_tremor_dataset()
+    print(df.head())
